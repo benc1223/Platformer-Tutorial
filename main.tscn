@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://yjob7knkknix"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_x45n8"]
+[ext_resource type="PackedScene" uid="uid://bn57h41brlxvi" path="res://bg.tscn" id="2_l5km2"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(-3, 3)
+script = ExtResource("1_x45n8")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 81.0
+offset_right = 671.0
+offset_bottom = 215.0
+tooltip_text = "Starts the App"
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 320.0
+offset_right = 675.0
+offset_bottom = 454.0
+tooltip_text = "Exits App"
+text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_l5km2")]
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
